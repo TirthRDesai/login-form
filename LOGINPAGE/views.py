@@ -10,3 +10,7 @@ def signIn(request):
 
 def signUp(request):
     return index.signUp(request)
+
+
+def makeCss(request):
+    return render(request, 'css/index.css')

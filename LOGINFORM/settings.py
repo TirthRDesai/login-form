@@ -18,6 +18,7 @@ import mimetypes
 mimetypes.add_type("application/javascript", ".js", True)
 mimetypes.add_type("python", ".py", True)
 mimetypes.add_type("text/css", ".css", True)
+# mimetypes.add_type("text/html", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +33,7 @@ SECRET_KEY = 'django-insecure-oc_tdfz#9k8m4lin1acp8e2ze5^f#ckiry3q4a_lbni@i+p54p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '.vercel.app', 'login-form-b001d15c8-tirthrdesai.vercel.app'] # Allow *.vercel.app
+ALLOWED_HOSTS = [ '.vercel.app', 'login-form-b001d15c8-tirthrdesai.vercel.app', '127.0.0.1'] # Allow *.vercel.app
 
 
 # Application definition
@@ -123,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'LOGINPAGE/templates/css'),
     os.path.join(BASE_DIR, 'LOGINPAGE/templates/js'),
