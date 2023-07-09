@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- OTHER FILES LOADING -->
+
+
+    <!-- CSS LOADING -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.12/sweetalert2.css" integrity="sha512-K0TEY7Pji02TnO4NY04f+IU66vsp8z3ecHoID7y0FSVRJHdlaLp/TkhS5WDL3OygMkVns4bz0/ah4j8M3GgguA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href="{% static '/index.css' %}" type="text/css">
+
+</head>
+<body>
+
+    <div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form>
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" id = "nameInputSignUp" placeholder="Name" autocomplete="name" />
+            <input type="email" id = "emailInputSignUp" placeholder="Email" autocomplete="email" />
+            <input type="password" id = "passwordInputSignUp" placeholder="Password" autocomplete = "new-password" />
+        </form>
+        <button id = "signUpButton" onclick="submitSignUp()">Sign Up</button>
+    </div>
+    <div class="form-container sign-in-container">
+        <form>
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+
+
+            <input type="email" id = "emailInputSignIn" placeholder="Email" autocomplete="email" />
+            <input type="password" id = "passwordInputSignIn" placeholder="Password" autocomplete="new-password"/>
+            
+            <a href="#">Forgot your password?</a>
+
+
+        </form>
+
+        <button id = "signInBtn" onclick = "submitSignIn()">Sign In</button>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
+
+
+<!-- SCRIPTS LOADING -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.12/sweetalert2.min.js" integrity="sha512-JbRQ4jMeFl9Iem8w6WYJDcWQYNCEHP/LpOA11LaqnbJgDV6Y8oNB9Fx5Ekc5O37SwhgnNJdmnasdwiEdvMjW2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="module" src="{% static '/index.js' %}"></script>
+<script type = "text/javascript">
+    function submitSignUp(){
+        var name = document.getElementById("nameInputSignUp").value;
+        var email = document.getElementById("emailInputSignUp").value;
+        var password = document.getElementById("passwordInputSignUp").value;
+
+        document.getElementById("nameInputSignUp").value = "";
+        document.getElementById("emailInputSignUp").value = "";
+        document.getElementById("passwordInputSignUp").value = "";
+
+        $.ajax({
+            method: 'POST',
+            url: '/checkData/SignUp',
+            data: {'name':name , 'email' : email, 'password': password},
+            dataType: 'json',
+            success: function(d){
+                console.log(d);
+            }   
+        });
+    }
+
+
+    function submitSignIn(){
+        var email = document.getElementById("emailInputSignIn").value;
+        var password = document.getElementById("passwordInputSignIn").value;
+
+        document.getElementById("emailInputSignIn").value = "";
+        document.getElementById("passwordInputSignIn").value = "";        
+
+        $.ajax({
+            method: 'POST',
+            url: '/checkData/SignIn',
+            data: {'email' : email, 'password': password},
+            dataType: 'json',
+            success: function(d){
+                console.log(d);
+            }   
+        });
+    }
+</script>
