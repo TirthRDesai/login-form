@@ -6,5 +6,5 @@ urlpatterns = [
     path('', views.createApp, name = 'homepage'),
     path('checkData/SignUp', views.signUp, name = 'signUp'),
     path('checkData/SignIn', views.signIn, name = 'signIn'),
-    path('static/', views.makeCss)
+    path('static/index.css', views.makeCss)
 ]
