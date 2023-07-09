@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "LOGINFORM/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "LOGINFORM/wsgi.py"
+      }
+    ]
+}
