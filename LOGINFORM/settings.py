@@ -11,15 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 import os
 import mimetypes
 
-driver = webdriver.Chrome()
-base_url = str(driver.current_url)
-print(base_url)
 
 mimetypes.add_type("text/html", ".html", True)
 mimetypes.add_type("application/javascript", ".js", True)
@@ -142,4 +136,3 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-driver.quit()
