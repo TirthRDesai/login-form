@@ -10,6 +10,7 @@ window.onload = function(){
     signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
     });
+    console.log('PROGRAM STARTED');
 };
 
 
@@ -27,9 +28,4 @@ function submitSignUp(){
             console.log(d);
         }   
     });
-}
-
-
-function alertUser(){
-    alert("HELLO");
 }
