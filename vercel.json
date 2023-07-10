@@ -6,12 +6,12 @@
       "src": "LOGINFORM/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "30mb", "runtime" : "python3.6"
+        "maxLambdaSize": "30mb", "runtime" : "python3.9"
       }
     },
-    { "src": "*/.html", "use": "@vercel/static" },
-    { "src": "*/.css", "use": "@vercel/static" },
-    { "src": "*/.js", "use": "@vercel/static" },
+    { "src": "**/*.html", "use": "@vercel/static" },
+    { "src": "**/*.css", "use": "@vercel/static" },
+    { "src": "**/*.js", "use": "@vercel/static" },
     {
       "src": "build_files.sh",
       "use": "@vercel/static",
