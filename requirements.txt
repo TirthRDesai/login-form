@@ -1,5 +1,5 @@
 anyio==3.7.1
-apturl==0.5.2
+apturl
 asgiref==3.7.2
 bcrypt==3.2.0
 bleach==6.0.0
