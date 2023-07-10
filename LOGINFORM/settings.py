@@ -19,6 +19,7 @@ import mimetypes
 
 driver = webdriver.Chrome()
 base_url = str(driver.current_url)
+print(base_url)
 
 mimetypes.add_type("text/html", ".html", True)
 mimetypes.add_type("application/javascript", ".js", True)
