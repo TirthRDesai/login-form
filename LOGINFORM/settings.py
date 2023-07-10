@@ -133,9 +133,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 print("dir - " , BASE_DIR)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'LOGINPAGE/templates/static'),
-    os.path.join(base_url, 'static/css'),
-    os.path.join(base_url, 'static/js'),
+    os.path.join(BASE_DIR,'LOGINPAGE/templates/static')
 ]
 
 # Default primary key field type
