@@ -50,7 +50,6 @@ pkginfo==1.9.6
 postgrest==0.10.6
 protobuf==3.12.4
 ptyprocess==0.7.0
-pycairo==1.20.1
 pycups==2.0.1
 pydantic==1.10.11
 Pygments==2.15.1
