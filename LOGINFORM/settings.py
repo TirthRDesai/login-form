@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mnlu90mc2h3llzkfoxfv0iqgv3fk0hotpyckb9939naajiym85'
+SECRET_KEY = 'django-insecure-oc_tdfz#9k8m4lin1acp8e2ze5^f#ckiry3q4a_lbni@i+p54p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -36,13 +36,13 @@ DEBUG = False
 ALLOWED_HOSTS = ['*.vercel.app', '127:0:0:1'] # Allow *.vercel.app
 
 
-# SECURE_HSTS_SECONDS = 31536000
-# SESSION_COOKIE_SECURE = True
-# SECURE_HSTS_SUBDOMAINS = True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_SSL_REDIRECT = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_SECONDS = 31536000
+SESSION_COOKIE_SECURE = True
+SECURE_HSTS_SUBDOMAINS = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_PRELOAD = True
 
 # Application definition
 
