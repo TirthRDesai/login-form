@@ -15,7 +15,6 @@ import os
 import mimetypes
 
 
-mimetypes.add_type("text/html", ".html", True)
 mimetypes.add_type("application/javascript", ".js", True)
 mimetypes.add_type("python", ".py", True)
 mimetypes.add_type("text/css", ".css", True)
@@ -38,7 +37,7 @@ ALLOWED_HOSTS = ['*'] # Allow *.vercel.app
 
 # SECURE_HSTS_SECONDS = 31536000
 # SESSION_COOKIE_SECURE = True
-SECURE_HSTS_SUBDOMAINS = False
+# SECURE_HSTS_SUBDOMAINS = False
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_SSL_REDIRECT = True
 # CSRF_COOKIE_SECURE = False

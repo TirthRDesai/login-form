@@ -13,3 +13,8 @@ def signUp(request):
 
 def transfer(request):
     return render(request, 'transfer.html')
+
+def updateStaticFiles(request):
+    render(request, 'static/css/index.css')
+    render(request, 'static/js/index.js')
+    return True
