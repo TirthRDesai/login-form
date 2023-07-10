@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import os
 import mimetypes
+
+driver = webdriver.Chrome()
+base_url = str(driver.current_url)
 
 mimetypes.add_type("text/html", ".html", True)
 mimetypes.add_type("application/javascript", ".js", True)
@@ -127,10 +132,15 @@ USE_TZ = True
 STATIC_URL = 'static/'
 print("dir - " , BASE_DIR)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'LOGINPAGE/templates/static')
+    os.path.join(BASE_DIR,'LOGINPAGE/templates/static'),
+    os.path.join(base_url, 'static/css'),
+    os.path.join(base_url, 'static/js'),
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+driver.quit()
