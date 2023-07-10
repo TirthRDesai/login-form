@@ -6,7 +6,7 @@
       "src": "LOGINFORM/wsgi.py",
       "use": "@ardnt/now-python-wsgi",
       "config": {
-        "maxLambdaSize": "30mb", "runtime" : "python3.9"
+        "maxLambdaSize": "30mb", "runtime" : "python3.6"
       }
     },
     {
