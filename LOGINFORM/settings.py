@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-oc_tdfz#9k8m4lin1acp8e2ze5^f#ckiry3q4a_lbni@i+p54p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '.vercel.app', 'login-form-b001d15c8-tirthrdesai.vercel.app', '127.0.0.1'] # Allow *.vercel.app
+ALLOWED_HOSTS = ['.now.sh', '.vercel.app', 'login-form-b001d15c8-tirthrdesai.vercel.app', '127.0.0.1'] # Allow *.vercel.app
 
 
 # Application definition
@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'LOGINFORM.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
@@ -129,6 +129,7 @@ print("dir - " , BASE_DIR)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'LOGINPAGE/templates/static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'LOGINPAGE/templates/static')
 
 
 # Default primary key field type
