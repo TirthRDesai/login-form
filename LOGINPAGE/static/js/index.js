@@ -29,3 +29,7 @@ function submitSignUp(){
     });
 }
 
+
+function alertUser(){
+    alert("HELLO");
+}
