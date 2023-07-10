@@ -91,7 +91,7 @@
 
         $.ajax({
             method: 'POST',
-            url: '/checkData/SignUp',
+            url: '../checkData/SignUp',
             data: {'name':name , 'email' : email, 'password': password},
             dataType: 'json',
             success: function(d){
@@ -110,7 +110,7 @@
 
         $.ajax({
             method: 'POST',
-            url: '/checkData/SignIn',
+            url: '../checkData/SignIn',
             data: {'email' : email, 'password': password},
             dataType: 'json',
             success: function(d){
