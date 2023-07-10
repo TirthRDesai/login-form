@@ -11,3 +11,5 @@ def signIn(request):
 def signUp(request):
     return index.signUp(request)
 
+def transfer(request):
+    return render(request, 'transfer.html')
